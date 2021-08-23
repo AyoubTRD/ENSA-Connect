@@ -5,6 +5,7 @@ import defaultStyles from "../config/defaultStyles";
 import sizes from "../config/sizes";
 import { getFontFamily } from "../utility/font";
 import AppText from "./AppText";
+import Avatar from "./Avatar";
 
 function Story({ user, image, isLast }) {
   return (
@@ -18,7 +19,7 @@ function Story({ user, image, isLast }) {
         ]}
       >
         <Image source={image} style={styles.image} />
-        <Image source={user.image} style={styles.userImage} />
+        <Avatar image={user.image} style={styles.avatar} />
         <AppText
           style={[defaultStyles.storyText, styles.text]}
           numberOfLines={1}
@@ -31,18 +32,15 @@ function Story({ user, image, isLast }) {
 }
 
 const styles = StyleSheet.create({
+  avatar: {
+    position: "absolute",
+    top: 20,
+    left: 20,
+  },
   image: {
     resizeMode: "cover",
     width: "100%",
     height: "100%",
-  },
-  userImage: {
-    borderRadius: 5,
-    width: 40,
-    height: 40,
-    position: "absolute",
-    top: 20,
-    left: 20,
   },
   text: {
     position: "absolute",

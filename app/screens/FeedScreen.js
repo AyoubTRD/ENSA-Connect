@@ -1,21 +1,28 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { Animated, ScrollView, StyleSheet, View } from "react-native";
 
 import Stories from "../components/Stories";
 import colors from "../config/colors";
 import Screen from "../components/Screen";
 import PostForm from "../components/PostForm";
 import sizes from "../config/sizes";
+import Post from "../components/Post";
+import useAnimation from "../hooks/useAnimation";
 
 function FeedScreen({}) {
   return (
     <Screen>
-      <View style={styles.section}>
-        <Stories />
-      </View>
-      <View style={[styles.section, styles.noPadding]}>
-        <PostForm />
-      </View>
+      <ScrollView>
+        <View style={styles.section}>
+          <Stories />
+        </View>
+        <View style={[styles.section, styles.noPadding]}>
+          <PostForm />
+        </View>
+        <View style={styles.section}>
+          <Post />
+        </View>
+      </ScrollView>
     </Screen>
   );
 }

@@ -17,8 +17,10 @@ export default {
   },
   storyText: {
     color: colors.white,
-
     fontSize: 15,
     fontFamily: getFontFamily("600"),
+  },
+  row: {
+    flexDirection: "row",
   },
 };
